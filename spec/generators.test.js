@@ -26,6 +26,6 @@ describe('RPG Suite Generators', () => {
     expect(npc).not.toContain('{{CHA}}');
     
     // Ensure actual stat numbers are injected (e.g. " 15 (+2)")
-    expect(npc).toMatch(/\\d{1,2} \\([+\\-]\\d\\)/);
+    expect(npc).toMatch(/\d{1,2} \([+\-]\d\)/);
   });
 });
