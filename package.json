@@ -1,8 +1,8 @@
 {
-  "name": "rpg-dice",
-  "version": "0.2.5",
-  "description": "Generate inline dice rolls and ability score pools for an RPG like DnD directly inside Pulsar",
-  "main": "./lib/rpg-dice",
+  "name": "rpg-suite",
+  "version": "0.3.0",
+  "description": "A full-scale Dungeon Master toolkit and Dice Rolling engine for the Pulsar text editor",
+  "main": "./lib/rpg-suite",
   "engines": {
     "pulsar": "^1.0.0"
   },
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JLDesignNetwork/rpg-dice.git"
+    "url": "git+https://github.com/JLDesignNetwork/rpg-suite.git"
   },
   "author": "JLDesignNetwork",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JLDesignNetwork/rpg-dice/issues"
+    "url": "https://github.com/JLDesignNetwork/rpg-suite/issues"
   },
-  "homepage": "https://github.com/JLDesignNetwork/rpg-dice#readme",
+  "homepage": "https://github.com/JLDesignNetwork/rpg-suite#readme",
   "keywords": [
     "RPG",
     "dice",
@@ -26,13 +26,18 @@
     "dungeons-and-dragons",
     "tabletop",
     "ttrpg",
-    "fate",
-    "fudge",
+    "dm",
+    "toolkit",
     "pulsar",
     "editor-plugin"
   ],
   "activationCommands": {
-    "atom-workspace": "rpg-dice:roll"
+    "atom-workspace": [
+      "rpg-suite:roll",
+      "rpg-suite:gen-sheet",
+      "rpg-suite:gen-npc",
+      "rpg-suite:gen-encounter"
+    ]
   },
   "dependencies": {},
   "devDependencies": {

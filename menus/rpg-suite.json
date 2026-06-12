@@ -1,0 +1,41 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "RPG Suite: Roll Dice / Stats",
+        "command": "rpg-suite:roll"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "RPG Suite",
+          "submenu": [
+            {
+              "label": "Roll Dice / Stats",
+              "command": "rpg-suite:roll"
+            },
+            {
+              "type": "separator"
+            },
+            {
+              "label": "Generate Character Sheet",
+              "command": "rpg-suite:gen-sheet"
+            },
+            {
+              "label": "Generate NPC Stat Block",
+              "command": "rpg-suite:gen-npc"
+            },
+            {
+              "label": "Generate Encounter Table",
+              "command": "rpg-suite:gen-encounter"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
