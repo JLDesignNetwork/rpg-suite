@@ -4,6 +4,8 @@ A comprehensive Dungeon Master toolkit and inline dice-rolling engine for the [P
 
 Transform your text editor into a full-scale TTRPG campaign manager. Generate stat blocks, roll complex dice equations, and scaffold character sheets directly inside your Markdown notes!
 
+> 📖 **Check out the [Comprehensive Usage Guide](USAGE.md)** for a deep dive into advanced features, built-in template tags, and custom JSON-like argument parsing!
+
 ---
 
 ## Features
