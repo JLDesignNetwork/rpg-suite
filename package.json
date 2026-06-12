@@ -1,0 +1,41 @@
+{
+  "name": "rpg-dice",
+  "version": "0.2.5",
+  "description": "Generate inline dice rolls and ability score pools for an RPG like DnD directly inside Pulsar",
+  "main": "./lib/rpg-dice",
+  "engines": {
+    "pulsar": "^1.0.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JLDesignNetwork/rpg-dice.git"
+  },
+  "author": "JLDesignNetwork",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JLDesignNetwork/rpg-dice/issues"
+  },
+  "homepage": "https://github.com/JLDesignNetwork/rpg-dice#readme",
+  "keywords": [
+    "RPG",
+    "dice",
+    "game",
+    "dungeons-and-dragons",
+    "tabletop",
+    "ttrpg",
+    "fate",
+    "fudge",
+    "pulsar",
+    "editor-plugin"
+  ],
+  "activationCommands": {
+    "atom-workspace": "rpg-dice:roll"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
