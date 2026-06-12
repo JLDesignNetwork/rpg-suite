@@ -36,6 +36,13 @@ RPG Suite allows you to completely override the default Markdown templates. Navi
 
 *(Note: If you use the `{{STR}}`, `{{DEX}}`, `{{CON}}`, `{{INT}}`, `{{WIS}}`, and `{{CHA}}` tags inside your custom NPC template, RPG Suite will still automatically parse and inject rolled stats for you!)*
 
+**Example Custom NPC Template (`my-npc.md`):**
+```markdown
+# Custom Monster Block
+**STR:** {{STR}} | **DEX:** {{DEX}} | **CON:** {{CON}}
+**INT:** {{INT}} | **WIS:** {{WIS}} | **CHA:** {{CHA}}
+```
+
 ---
 
 ## Development & Testing
