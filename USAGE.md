@@ -20,27 +20,29 @@ You can quickly generate standard ability score pools for new characters.
 
 ## Markdown Generators & Smart Arguments
 
-RPG Suite can dynamically scaffold entire Markdown templates for character sheets, NPCs, and encounters. It does this through **Smart Generator Commands**.
+RPG Suite can dynamically scaffold entire Markdown templates for character sheets, NPCs, and initiative trackers. You can trigger this via the **UI Menu** (`Packages > RPG Suite > Generate...`) or via **Smart Generator Commands**.
+
+### Smart Generator Commands
 
 **Basic Commands:**
 - `gen:sheet` ➔ Generates a Character Sheet
 - `gen:npc` ➔ Generates a Monster/NPC Stat Block
-- `gen:encounter` ➔ Generates an Encounter Tracking Table
+- `gen:tracker` ➔ Generates an Initiative Tracking Table
 
 ### Passing Arguments
 
 You can heavily customize the generated templates by passing arguments inside curly braces `{}`.
 
-**Syntax:** `gen:sheet{key:value, key:value}`
+**Syntax:** `gen:sheet{key:value,key:value}`
 
 #### 1. Intelligent Stat Prioritization
 If you want the engine to automatically roll and assign stats for a specific class, pass the `stats` and `class` arguments:
-- `gen:sheet{stats:4, class:wizard}` 
+- `gen:sheet{stats:4,class:wizard}` 
   *Action:* Rolls 4d6-drop-lowest six times. Sorts the results highest-to-lowest, and assigns the highest numbers to Intelligence and Constitution (the default priorities for a Wizard)!
 
 #### 2. Explicit Stat Overrides
 If you are copying an existing monster and already know their stats, you can explicitly define them to bypass the rolling engine:
-- `gen:npc{str:18, dex:14, int:8}`
+- `gen:npc{str:18,dex:14,int:8}`
   *Action:* Injects exactly those values into the generated NPC block, and calculates the `+4`, `+2`, and `-1` modifiers automatically!
 
 #### 3. Built-in Placeholders
@@ -59,8 +61,21 @@ The default `gen:sheet` and `gen:npc` templates come with Several built-in tags 
 | `init` | `{{INIT}}` | +0 |
 
 **Example:**
-`gen:npc{name:Goblin Boss, ac:17, hp:21, speed:30, alignment:chaotic evil}`
+`gen:npc{name:Goblin-Boss,ac:17,hp:21,speed:30,alignment:chaotic-evil}`
 *Action:* Generates a fully populated Goblin Boss stat block instantly!
+
+#### 4. Multi-System Generation & Auto-Skills
+RPG Suite now supports multiple game systems out of the box! By passing the `system` (or `game`) argument, the engine will automatically generate the correct character sheet structure, inject a comprehensive, system-specific skill list, and auto-calculate mathematical modifiers specific to the universe.
+
+**Supported Systems:**
+- `dnd-5e`, `dnd-4e`, `dnd-3.5` (D&D variants)
+- `cyberpunk` or `cp` (Cyberpunk RED)
+- `w40k` (Warhammer 40k: Wrath & Glory)
+- `rifts` (Palladium / Rifts)
+
+**Example:**
+`gen:sheet{system:cp,class:solo}`
+*Action:* Generates a Cyberpunk character sheet, rolls stats optimized for a Solo, and dynamically builds a massive 40+ skill table with auto-calculated attribute modifiers based on the raw stat generation!
 
 ## Custom Templates & Dynamic Tags
 
@@ -80,7 +95,7 @@ The RPG Suite parser is completely dynamic. You are **not** limited to the built
 To populate those custom tags, just pass them as arguments exactly as you wrote them!
 
 **Command:**
-`gen:npc{name:Bandit, faction:Zhentarim, threat:High}`
+`gen:npc{name:Bandit,faction:Zhentarim,threat:High}`
 
 *Result:*
 ```markdown

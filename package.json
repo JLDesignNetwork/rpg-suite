@@ -1,6 +1,6 @@
 {
   "name": "rpg-suite",
-  "version": "0.5.1",
+  "version": "0.7.0",
   "description": "A full-scale Dungeon Master toolkit and Dice Rolling engine for the Pulsar text editor",
   "main": "./lib/rpg-suite",
   "engines": {
@@ -35,8 +35,20 @@
     "atom-workspace": [
       "rpg-suite:roll",
       "rpg-suite:gen-sheet",
+      "rpg-suite:gen-sheet-dnd5e",
+      "rpg-suite:gen-sheet-dnd4e",
+      "rpg-suite:gen-sheet-dnd35",
+      "rpg-suite:gen-sheet-cyberpunk",
+      "rpg-suite:gen-sheet-w40k",
+      "rpg-suite:gen-sheet-rifts",
       "rpg-suite:gen-npc",
-      "rpg-suite:gen-encounter"
+      "rpg-suite:gen-npc-dnd5e",
+      "rpg-suite:gen-npc-dnd4e",
+      "rpg-suite:gen-npc-dnd35",
+      "rpg-suite:gen-npc-cyberpunk",
+      "rpg-suite:gen-npc-w40k",
+      "rpg-suite:gen-npc-rifts",
+      "rpg-suite:gen-tracker"
     ]
   },
   "dependencies": {},

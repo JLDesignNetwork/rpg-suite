@@ -28,15 +28,32 @@ Need to roll up a new character? Just type `stat:4` (for 4d6 drop lowest) or `st
 ### 🧙‍♂️ Markdown Generators
 Instantly inject TTRPG templates into your active document! 
 
-Type a generator command anywhere in your text (e.g. `gen:sheet`, `gen:npc`, or `gen:encounter`), place your cursor on the text, and hit `<kbd>Ctrl+R</kbd>`. The router will automatically erase the command string and inject the full Markdown template!
+You can generate templates via **UI Menus** or **Smart Commands**.
+
+**Via UI Menu:**
+Navigate to `Packages > RPG Suite > Generate Character Sheet` (or `Generate NPC Stat Block`), and select your game system from the dropdown menu to instantly inject a template at your cursor!
+
+**Via Smart Command:**
+Type a generator command anywhere in your text (e.g. `gen:sheet`, `gen:npc`, or `gen:tracker`), place your cursor on the text, and hit `<kbd>Ctrl+R</kbd>`. The router will automatically erase the command string and inject the full Markdown template!
+
+### 🌍 Multi-System Engine & Dynamic Skills
+RPG Suite now supports multiple game systems! By passing the `system` argument, the engine will automatically generate the correct character sheet structure, inject a comprehensive, system-specific skill list (over 200 skills indexed), and auto-calculate mathematical modifiers specific to the universe (e.g. base-10 math for D&D, percentage math for Palladium, or raw stat math for Cyberpunk).
+
+**Supported Systems (`system` or `game` arguments):**
+- `dnd-5e`, `dnd-4e`, `dnd-3.5` (D&D variants)
+- `cyberpunk` or `cp` (Cyberpunk RED)
+- `w40k` (Warhammer 40k: Wrath & Glory)
+- `rifts` (Palladium / Rifts)
+
+**Example:** `gen:sheet{system:cp,class:solo}` generates a Cyberpunk character sheet, rolls stats optimized for a Solo, and dynamically builds a massive 40+ skill table with auto-calculated attribute modifiers!
 
 ### 🧠 Smart Router & Generator Arguments
 Generators support passing inline JSON-style arguments to dynamically sculpt your templates and prioritize generated stat arrays based on standard D&D classes!
 
 **Syntax:** `gen:sheet{key:val,key:val}`
 
-- **Intelligent Stat Priority:** `gen:sheet{stats:4,class:paladin}` rolls 4d6-drop-lowest, sorts them from highest to lowest, and assigns the absolute best scores to STR and CHA, exactly as a Paladin would want!
-- **Explicit Stat Overrides:** `gen:npc{str:18,dex:15}` will skip rolling and hardcode those specific scores into the generated table.
+- **Intelligent Stat Priority:** `gen:sheet{system:dnd-5e,stats:4,class:paladin}` rolls 4d6-drop-lowest, sorts them from highest to lowest, and assigns the absolute best scores to STR and CHA, exactly as a Paladin would want!
+- **Explicit Stat Overrides:** `gen:npc{str:18,dex:15}` will skip rolling and hardcode those specific scores into the generated table, and automatically trickle down the `+4` and `+2` math into the injected Skill table.
 - **Dynamic Tag Replacements:** Pass any arbitrary property like `{name:Goblin,hp:14,ac:15}`. The engine will look for `{{NAME}}`, `{{HP}}`, and `{{AC}}` tags inside the Markdown template and instantly replace them with your values!
 
 ---
@@ -45,10 +62,12 @@ Generators support passing inline JSON-style arguments to dynamically sculpt you
 
 Don't play D&D 5e? Running a Sci-Fi game instead? No problem. 
 
-RPG Suite allows you to completely override the default Markdown templates. Navigate to **Settings > Packages > rpg-suite** to define absolute file paths to your own custom `.md` templates:
-- `Custom Character Sheet Template`
-- `Custom NPC Stat Block Template`
-- `Custom Encounter Table Template`
+RPG Suite allows you to completely override the default Markdown templates. Navigate to **Settings > Packages > rpg-suite** to define absolute file paths to your own custom `.md` templates. We support independent templates for Sheets and NPCs for every game system, as well as a universal tracker!
+
+- `D&D 5e Sheet Path` / `D&D 5e NPC Path`
+- `Cyberpunk Red Sheet Path` / `Cyberpunk Red NPC Path`
+- `Initiative Tracker Path`
+- *(and more)*
 
 *(Note: The RPG Suite parser uses a fully dynamic placeholder engine. You can put **any** uppercase tag in your custom template (e.g. `{{FACTION}}`) and dynamically inject text into it by passing it as an argument: `gen:npc{faction:Zhentarim}`!)*
 

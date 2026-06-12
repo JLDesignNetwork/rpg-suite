@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2026-06-12
+### Added
+- **Multi-System UI Menus:** Replaced the generic generator commands in the main menu with comprehensive submenus for every supported game system. You can now point-and-click to generate Sheets and NPCs for Cyberpunk, Warhammer, Rifts, and all editions of D&D without typing any hotkeys!
+
+## [0.6.0] - 2026-06-12
+### Added
+- **Multi-System Support:** The Markdown Generators now natively support generating characters for different universes using the `system` argument. Supported systems: `dnd-5e`, `dnd-4e`, `dnd-3.5`, `cyberpunk`, `w40k`, `rifts`.
+- **Dynamic Skills Engine:** Built massive built-in skill dictionaries for each system (over 200 distinct skills). When generating a sheet, it automatically maps out the full skills table with mathematical modifiers auto-calculated based on the generated stats.
+- **System-Specific Math:** Implemented custom algorithm mappings for each system's stat modifiers: base-10 stat division for D&D, percentage accumulation for Palladium/Rifts, and raw carry-over for Cyberpunk/W40k.
+- **Granular Custom Templates:** Overhauled the Settings menu to allow independent custom template paths for Sheets, NPCs, and Trackers across all systems.
+
+### Changed
+- **Renamed `gen:encounter` to `gen:tracker`** to clarify its purpose as an Initiative Tracker rather than a random monster spawner.
+
+## [0.5.1] - 2026-06-12
+### Fixed
+- Hotfixed a critical regex parsing bug so the parser accepts tags containing periods (like `dnd-3.5`).
+
+## [0.5.0] - 2026-06-12
+### Added
+- Overhauled all system default templates to professional Markdown table-based layouts. 
+
+## [0.4.0] - 2026-06-12
+### Added
+- Upgraded the generator's template strings to parse and inject structured `Background` and `History` elements out-of-the-box.
+
 ## [0.3.0] - 2026-06-12
 ### Added
 - Complete expansion into a Dungeon Master toolkit with Markdown generators (`gen:sheet`, `gen:npc`, `gen:encounter`).

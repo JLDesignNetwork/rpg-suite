@@ -23,15 +23,29 @@
             },
             {
               "label": "Generate Character Sheet",
-              "command": "rpg-suite:gen-sheet"
+              "submenu": [
+                { "label": "D&D 5e", "command": "rpg-suite:gen-sheet-dnd5e" },
+                { "label": "D&D 4e", "command": "rpg-suite:gen-sheet-dnd4e" },
+                { "label": "D&D 3.5", "command": "rpg-suite:gen-sheet-dnd35" },
+                { "label": "Cyberpunk Red", "command": "rpg-suite:gen-sheet-cyberpunk" },
+                { "label": "Warhammer 40k", "command": "rpg-suite:gen-sheet-w40k" },
+                { "label": "Rifts", "command": "rpg-suite:gen-sheet-rifts" }
+              ]
             },
             {
               "label": "Generate NPC Stat Block",
-              "command": "rpg-suite:gen-npc"
+              "submenu": [
+                { "label": "D&D 5e", "command": "rpg-suite:gen-npc-dnd5e" },
+                { "label": "D&D 4e", "command": "rpg-suite:gen-npc-dnd4e" },
+                { "label": "D&D 3.5", "command": "rpg-suite:gen-npc-dnd35" },
+                { "label": "Cyberpunk Red", "command": "rpg-suite:gen-npc-cyberpunk" },
+                { "label": "Warhammer 40k", "command": "rpg-suite:gen-npc-w40k" },
+                { "label": "Rifts", "command": "rpg-suite:gen-npc-rifts" }
+              ]
             },
             {
-              "label": "Generate Encounter Table",
-              "command": "rpg-suite:gen-encounter"
+              "label": "Generate Initiative Tracker",
+              "command": "rpg-suite:gen-tracker"
             }
           ]
         }
