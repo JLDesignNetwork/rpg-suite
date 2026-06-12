@@ -1,8 +1,8 @@
 # RPG Suite
 
-[![Package Version](https://img.shields.io/apm/v/rpg-suite.svg?style=flat-square)](https://web.pulsar-edit.dev/packages/rpg-suite)
-[![Downloads](https://img.shields.io/apm/dm/rpg-suite.svg?style=flat-square)](https://web.pulsar-edit.dev/packages/rpg-suite)
-[![License](https://img.shields.io/apm/l/rpg-suite.svg?style=flat-square)](https://github.com/JLDesignNetwork/rpg-suite/blob/master/LICENSE)
+[![Package Version](https://img.shields.io/github/v/release/JLDesignNetwork/rpg-suite?style=flat-square)](https://web.pulsar-edit.dev/packages/rpg-suite)
+[![Downloads](https://img.shields.io/github/downloads/JLDesignNetwork/rpg-suite/total?style=flat-square)](https://web.pulsar-edit.dev/packages/rpg-suite)
+[![License](https://img.shields.io/github/license/JLDesignNetwork/rpg-suite?style=flat-square)](https://github.com/JLDesignNetwork/rpg-suite/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/JLDesignNetwork/rpg-suite.svg?style=flat-square)](https://github.com/JLDesignNetwork/rpg-suite/issues)
 
 A comprehensive Dungeon Master toolkit and inline dice-rolling engine for the [Pulsar Editor](https://pulsar-edit.dev/).
