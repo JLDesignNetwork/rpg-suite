@@ -18,10 +18,18 @@ Need to roll up a new character? Just type `stat:4` (for 4d6 drop lowest) or `st
 > `Ability Score Pool:  15 (+2) | 14 (+2) | 13 (+1) | 12 (+1) | 10 (+0) |  8 (-1)`
 
 ### 🧙‍♂️ Markdown Generators
-Accessible via the **Packages > RPG Suite** dropdown menu or the Command Palette, instantly inject TTRPG templates into your active document at your cursor's position:
-- **Generate Character Sheet**: Scaffolds a complete Markdown character sheet with sections for stats, combat, features, and inventory.
-- **Generate NPC Stat Block**: Scaffolds a monster manual style stat block. **Bonus**: The engine automatically pre-rolls and injects 6 random ability scores (and their numeric modifiers) into the template for you!
-- **Generate Encounter Table**: Injects a clean Markdown table for tracking Initiative, Character Names, HP, and Conditions.
+Instantly inject TTRPG templates into your active document! 
+
+Type a generator command anywhere in your text (e.g. `gen:sheet`, `gen:npc`, or `gen:encounter`), place your cursor on the text, and hit `<kbd>Ctrl+R</kbd>`. The router will automatically erase the command string and inject the full Markdown template!
+
+### 🧠 Smart Router & Generator Arguments
+Generators support passing inline JSON-style arguments to dynamically sculpt your templates and prioritize generated stat arrays based on standard D&D classes!
+
+**Syntax:** `gen:sheet{key:val,key:val}`
+
+- **Intelligent Stat Priority:** `gen:sheet{stats:4,class:paladin}` rolls 4d6-drop-lowest, sorts them from highest to lowest, and assigns the absolute best scores to STR and CHA, exactly as a Paladin would want!
+- **Explicit Stat Overrides:** `gen:npc{str:18,dex:15}` will skip rolling and hardcode those specific scores into the generated table.
+- **Dynamic Tag Replacements:** Pass any arbitrary property like `{name:Goblin,hp:14,ac:15}`. The engine will look for `{{NAME}}`, `{{HP}}`, and `{{AC}}` tags inside the Markdown template and instantly replace them with your values!
 
 ---
 
@@ -34,11 +42,11 @@ RPG Suite allows you to completely override the default Markdown templates. Navi
 - `Custom NPC Stat Block Template`
 - `Custom Encounter Table Template`
 
-*(Note: If you use the `{{STR}}`, `{{DEX}}`, `{{CON}}`, `{{INT}}`, `{{WIS}}`, and `{{CHA}}` tags inside your custom NPC template, RPG Suite will still automatically parse and inject rolled stats for you!)*
+*(Note: The RPG Suite parser uses a fully dynamic placeholder engine. You can put **any** uppercase tag in your custom template (e.g. `{{FACTION}}`) and dynamically inject text into it by passing it as an argument: `gen:npc{faction:Zhentarim}`!)*
 
 **Example Custom NPC Template (`my-npc.md`):**
 ```markdown
-# Custom Monster Block
+# {{NAME}} - The {{FACTION}} Operative
 **STR:** {{STR}} | **DEX:** {{DEX}} | **CON:** {{CON}}
 **INT:** {{INT}} | **WIS:** {{WIS}} | **CHA:** {{CHA}}
 ```

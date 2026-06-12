@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-06-12
+### Added
+- Complete expansion into a Dungeon Master toolkit with Markdown generators (`gen:sheet`, `gen:npc`, `gen:encounter`).
+- Added Smart Router argument parser to intercept JSON-like parameters (e.g. `{stats:4,class:paladin,level:12,hp:58,ac:21,name:Jeff}`).
+- Implemented Intelligent Stat Distribution that mathematically sorts generated rolls and assigns them to the highest priority stats defined by standard D&D classes.
+- Added a Dynamic Argument Replacement engine enabling any arbitrary text property to be parsed and injected into `{{TAG}}` placeholders inside Markdown templates.
+
+### Changed
+- Rebranded and renamed the entire package repository from `rpg-dice` to `rpg-suite`.
+- Stripped aggressive bracket-matcher routing from the core UI binding to support seamless JSON string interpolation.
+
 ## [0.2.5] - 2026-06-12
 ### Fixed
 - Fixed a bug where dangling colons generated unintended ghost dice rolls by injecting custom Regular Expression word boundaries (`/[a-zA-Z0-9:\+\-]+/`) to bypass default editor punctuation breaks.
