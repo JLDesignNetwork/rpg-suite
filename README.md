@@ -4,6 +4,7 @@
 [![Downloads](https://img.shields.io/github/downloads/JLDesignNetwork/rpg-suite/total?style=flat-square)](https://web.pulsar-edit.dev/packages/rpg-suite)
 [![License](https://img.shields.io/github/license/JLDesignNetwork/rpg-suite?style=flat-square)](https://github.com/JLDesignNetwork/rpg-suite/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/JLDesignNetwork/rpg-suite.svg?style=flat-square)](https://github.com/JLDesignNetwork/rpg-suite/issues)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jldesignnetwork)
 
 A comprehensive Dungeon Master toolkit and inline dice-rolling engine for the [Pulsar Editor](https://pulsar-edit.dev/).
 
