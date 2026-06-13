@@ -2,7 +2,7 @@
 
 [![Package Version](https://img.shields.io/github/v/release/JLDesignNetwork/rpg-suite?style=flat-square)](https://web.pulsar-edit.dev/packages/rpg-suite)
 [![Downloads](https://img.shields.io/github/downloads/JLDesignNetwork/rpg-suite/total?style=flat-square)](https://web.pulsar-edit.dev/packages/rpg-suite)
-[![License](https://img.shields.io/github/license/JLDesignNetwork/rpg-suite?style=flat-square)](https://github.com/JLDesignNetwork/rpg-suite/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/JLDesignNetwork/rpg-suite/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/JLDesignNetwork/rpg-suite.svg?style=flat-square)](https://github.com/JLDesignNetwork/rpg-suite/issues)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jldesignnetwork)
 
@@ -10,9 +10,9 @@ A comprehensive Dungeon Master toolkit and inline dice-rolling engine for the [P
 
 Transform your text editor into a full-scale TTRPG campaign manager. Generate stat blocks, roll complex dice equations, and scaffold character sheets directly inside your Markdown notes!
 
-> 📖 **Check out the [Comprehensive Usage Guide](USAGE.md)** for a deep dive into advanced features, built-in template tags, and custom JSON-like argument parsing!
-> 📚 **Check out the [Wiki](WIKI.md)** for supported system references and skill mappings!
-> 🛡️ **Check out the [Testing Report](TESTING.md)** for details on the engine's stability and bounds-checking defenses!
+> - 📖 **Check out the [Comprehensive Usage Guide](USAGE.md)** for a deep dive into advanced features, built-in template tags, and custom JSON-like argument parsing!
+> - 📚 **Check out the [Wiki](WIKI.md)** for supported system references and skill mappings!
+> - 🛡️ **Check out the [Testing Report](TESTING.md)** for details on the engine's stability and bounds-checking defenses!
 
 ---
 
