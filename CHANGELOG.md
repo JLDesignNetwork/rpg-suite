@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2026-06-13
+### Fixed
+- **API Matching Black Sun Orcs**: Completely removed the API fuzzy matching fallback. Previously, if an exact match wasn't on the first page of the API (e.g. "Orc" was on page 3), the engine grabbed the first matching word (e.g. "Black Sun Orc" CR 2). By removing the fuzzy fallback entirely, the engine correctly falls back to the exact local DB stat block (CR 0.5) preserving the Target CR budget perfectly.
+
 ## [1.0.3] - 2026-06-13
 ### Fixed
 - **API Matching Word Boundaries**: Upgraded the API fuzzy matching from strict exact-matching to intelligent Word Boundary Regex (`\bname\b`). This prevents substring collisions (like "Angelic Enforcer" for "Orc") while still allowing valid partial suffix matches (like "Adult Red Dragon" for "Dragon")!
