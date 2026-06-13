@@ -1,5 +1,8 @@
 name: CI
 
+permissions:
+  contents: read
+
 # This workflow will run anytime a Pull Request is opened, or code is pushed to the main branch
 on:
   push:
