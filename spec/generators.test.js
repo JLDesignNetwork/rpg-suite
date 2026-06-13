@@ -3,23 +3,23 @@
  * @version 0.3.0
  */
 
-const { generateSheet, generateNPC, generateEncounter } = require('../lib/generators');
+const { generateSheet, generateNPC, generateTracker } = require('../lib/generators');
 
 describe('RPG Suite Generators', () => {
   it('generates a default character sheet', () => {
     const sheet = generateSheet('');
-    expect(sheet).toContain('# Character Name');
-    expect(sheet).toContain('**Armor Class:**');
+    expect(sheet).toContain('# Character Sheet');
+    expect(sheet).toContain('| Character Name |');
   });
 
   it('generates a default encounter table', () => {
-    const table = generateEncounter('');
+    const table = generateTracker('');
     expect(table).toContain('| Initiative | Name | HP | Max HP | Conditions / Notes |');
   });
 
   it('generates an NPC stat block with pre-rolled stats', () => {
     const npc = generateNPC('');
-    expect(npc).toContain('# NPC Name');
+    expect(npc).toContain('# Character Name');
     
     // Ensure the placeholders are gone
     expect(npc).not.toContain('{{STR}}');
@@ -30,7 +30,7 @@ describe('RPG Suite Generators', () => {
   });
 
   it('assigns explicit stats when provided in args', () => {
-    const npc = generators.generateNPC('', { str: '18', dex: '16', con: '14', int: '12', wis: '10', cha: '8' });
+    const npc = generateNPC('', { str: '18', dex: '16', con: '14', int: '12', wis: '10', cha: '8' });
     expect(npc).toContain('18 (+4)');
     expect(npc).toContain('16 (+3)');
     expect(npc).toContain('14 (+2)');
@@ -53,7 +53,7 @@ describe('RPG Suite Generators', () => {
       }
     };
     
-    const npc = generators.generateNPC('', args);
+    const npc = generateNPC('', args);
     
     // Check table order: STR | DEX | CON | INT | WIS | CHA
     // Mapped: 15 (STR), 14 (CON), 13 (DEX), 12 (WIS), 10 (CHA), 8 (INT)
