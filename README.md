@@ -11,6 +11,8 @@ A comprehensive Dungeon Master toolkit and inline dice-rolling engine for the [P
 Transform your text editor into a full-scale TTRPG campaign manager. Generate stat blocks, roll complex dice equations, and scaffold character sheets directly inside your Markdown notes!
 
 > 📖 **Check out the [Comprehensive Usage Guide](USAGE.md)** for a deep dive into advanced features, built-in template tags, and custom JSON-like argument parsing!
+> 📚 **Check out the [Wiki](WIKI.md)** for supported system references and skill mappings!
+> 🛡️ **Check out the [Testing Report](TESTING.md)** for details on the engine's stability and bounds-checking defenses!
 
 ---
 
@@ -34,7 +36,13 @@ You can generate templates via **UI Menus** or **Smart Commands**.
 Navigate to `Packages > RPG Suite > Generate Character Sheet` (or `Generate NPC Stat Block`), and select your game system from the dropdown menu to instantly inject a template at your cursor!
 
 **Via Smart Command:**
-Type a generator command anywhere in your text (e.g. `gen:sheet`, `gen:npc`, or `gen:tracker`), place your cursor on the text, and hit `<kbd>Ctrl+R</kbd>`. The router will automatically erase the command string and inject the full Markdown template!
+Type a generator command anywhere in your text (e.g. `gen:sheet`, `gen:npc`, `gen:tracker`, or `gen:encounter`), place your cursor on the text, and hit `<kbd>Ctrl+R</kbd>`. The router will automatically erase the command string and inject the full Markdown template!
+
+### ⚔️ API Encounter Generator
+Dynamically build combat encounters in seconds! The `gen:encounter` engine queries the **Open5e Public API** for D&D 5e monsters, and features a blazing-fast offline fallback database for all other game systems (or when the internet drops).
+- Auto-calculate balanced encounters (`gen:encounter{party:4,level:3}`).
+- Request specific monsters (`gen:encounter{monsters:goblin=3|orc=1}`).
+- Generates a fully-statted **Initiative Tracker** and simplified **Quick Stats** blocks to keep your document clean!
 
 ### 🌍 Multi-System Engine & Dynamic Skills
 RPG Suite now supports multiple game systems! By passing the `system` argument, the engine will automatically generate the correct character sheet structure, inject a comprehensive, system-specific skill list (over 200 skills indexed), and auto-calculate mathematical modifiers specific to the universe (e.g. base-10 math for D&D, percentage math for Palladium, or raw stat math for Cyberpunk).
@@ -53,6 +61,7 @@ Generators support passing inline JSON-style arguments to dynamically sculpt you
 **Syntax:** `gen:sheet{key:val,key:val}`
 
 - **Intelligent Stat Priority:** `gen:sheet{system:dnd-5e,stats:4,class:paladin}` rolls 4d6-drop-lowest, sorts them from highest to lowest, and assigns the absolute best scores to STR and CHA, exactly as a Paladin would want!
+- **Mass NPC Unrolling:** Generate entire squads instantly by passing dashed values! `gen:npc{class:Sorcerer-Paladin-random-3,name:Jeff-Patrick-Scott}` will instantly generate 5 distinct NPCs, securely unroll and map the explicit names to the explicit classes, and fallback to random defaults for the rest!
 - **Explicit Stat Overrides:** `gen:npc{str:18,dex:15}` will skip rolling and hardcode those specific scores into the generated table, and automatically trickle down the `+4` and `+2` math into the injected Skill table.
 - **Dynamic Tag Replacements:** Pass any arbitrary property like `{name:Goblin,hp:14,ac:15}`. The engine will look for `{{NAME}}`, `{{HP}}`, and `{{AC}}` tags inside the Markdown template and instantly replace them with your values!
 

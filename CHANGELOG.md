@@ -5,7 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.7.0] - 2026-06-12
+## [1.0.0] - 2026-06-13
+### Added
+- **Mass NPC Unrolling**: The `name` argument now supports hyphen-separated arrays (`name:Jeff-Bob`), mapping explicitly provided names to generated NPCs, with robust fallbacks to default names if the array length doesn't match the NPC count.
+- **Engine Bulletproofing**: Implemented mathematical boundary constraints across the suite:
+  - Hardcapped the dice engine to a maximum of 100 iterations per execution, preventing user thread lockups on extreme numbers.
+  - Hardcapped the unrolling loops to a maximum of 50 NPC generation blocks.
+
+### Fixed
+- Fixed a block-scoping `ReferenceError` involving `className` that was causing the process to hang silently when generating random classes.
+- Added comprehensive `try/catch` wrappers to the core templating injection sequence. Any critical failure will now abort the hanging process and cleanly output the exact error message into the editor.
+
+## [0.9.0] - 2026-06-13
+### Added
+- **API Encounter Generator (`gen:encounter`):** A smart, dual-hybrid engine that intelligently builds combat encounters.
+  - Queries public APIs (like Open5e) for D&D 5e monsters, with a seamless offline fallback.
+  - Automatically calculates Target CR based on party level (`party:4,level:3`).
+  - Allows requesting specific monsters (`monsters:goblin=3|orc=1`).
+  - Generates both an Initiative Tracker table and Quick Stats blocks.
+- **Offline Monster Database:** Included a core `monsters.json` database and added a new setting (`rpg-suite.customTemplates.monstersDB`) to point to custom offline databases.
+
+## [0.8.0] - 2026-06-12
 ### Added
 - **Multi-System UI Menus:** Replaced the generic generator commands in the main menu with comprehensive submenus for every supported game system. You can now point-and-click to generate Sheets and NPCs for Cyberpunk, Warhammer, Rifts, and all editions of D&D without typing any hotkeys!
 

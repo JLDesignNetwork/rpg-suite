@@ -1,0 +1,24 @@
+{
+  "dnd-5e": [
+    { "name": "Goblin", "cr": 0.25, "hp": 7, "ac": 15, "speed": "30 ft.", "env": ["forest", "underdark", "hills"] },
+    { "name": "Orc", "cr": 0.5, "hp": 15, "ac": 13, "speed": "30 ft.", "env": ["forest", "mountains", "plains"] },
+    { "name": "Bandit", "cr": 0.125, "hp": 11, "ac": 12, "speed": "30 ft.", "env": ["urban", "forest", "roads"] },
+    { "name": "Wolf", "cr": 0.25, "hp": 11, "ac": 13, "speed": "40 ft.", "env": ["forest", "plains", "snow"] },
+    { "name": "Ogre", "cr": 2, "hp": 59, "ac": 11, "speed": "40 ft.", "env": ["mountains", "forest", "underdark"] },
+    { "name": "Dragon Wyrmling (Red)", "cr": 4, "hp": 75, "ac": 17, "speed": "30 ft., fly 60 ft.", "env": ["mountains", "volcano"] }
+  ],
+  "cyberpunk": [
+    { "name": "Street Ganger", "cr": 1, "hp": 25, "ac": 4, "speed": "6 MOVE", "env": ["urban", "combat-zone"] },
+    { "name": "Corpo Sec", "cr": 3, "hp": 40, "ac": 11, "speed": "5 MOVE", "env": ["urban", "corporate"] },
+    { "name": "Cyberpsycho", "cr": 6, "hp": 65, "ac": 13, "speed": "8 MOVE", "env": ["urban", "combat-zone"] }
+  ],
+  "w40k": [
+    { "name": "Cultist", "cr": 1, "hp": 10, "ac": 2, "speed": "6 m", "env": ["hive", "chaos"] },
+    { "name": "Genestealer", "cr": 4, "hp": 20, "ac": 4, "speed": "8 m", "env": ["space-hulk", "tyranid"] },
+    { "name": "Chaos Space Marine", "cr": 5, "hp": 25, "ac": 5, "speed": "6 m", "env": ["battlefield", "chaos"] }
+  ],
+  "rifts": [
+    { "name": "CS Grunt", "cr": 2, "hp": 50, "ac": 80, "speed": "12", "env": ["urban", "wilderness"] },
+    { "name": "Brodkil", "cr": 4, "hp": 150, "ac": 120, "speed": "20", "env": ["wilderness", "magic-zone"] }
+  ]
+}
