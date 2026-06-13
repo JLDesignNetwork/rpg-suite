@@ -1,6 +1,6 @@
 {
   "name": "rpg-suite",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "A full-scale Dungeon Master toolkit and Dice Rolling engine for the Pulsar text editor",
   "main": "./lib/rpg-suite",
   "engines": {
