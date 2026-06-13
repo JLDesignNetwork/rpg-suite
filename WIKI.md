@@ -72,7 +72,7 @@ This section dictates exactly where the engine goes to find monster stat blocks 
   - *User-defined APIs only:* Disables the Open5e fallback completely.
   - *User-defined APIs + Open5e fallback (Default):* If your custom API fails, it will attempt to fetch from Open5e.
 - **Database Selection (`dataSource`):**
-  - *Built-in Defaults Only:* Ignores your custom databases and APIs. Only uses the Open5e API and the bundled `asset/monsters.json`.
+  - *Built-in Defaults Only:* Ignores your custom databases and APIs. Only uses the Open5e API and the bundled `assets/monsters.json`.
   - *Custom User Data Only:* Ignores the internet and bundled assets. Exclusively uses the Custom APIs and Custom JSON databases you define.
   - *Use All Available Sources (Default):* The engine sequentially attempts Custom APIs -> Open5e API -> Custom Local DB -> Bundled Local DB until it finds a match.
 - **Custom Monsters Database (.json):**

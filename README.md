@@ -16,6 +16,19 @@ Transform your text editor into a full-scale TTRPG campaign manager. Generate st
 
 ---
 
+## Demos
+
+<p align="center">
+  <img src="assets/scene-1.gif" width="48%">
+  <img src="assets/scene-2.gif" width="48%">
+</p>
+<p align="center">
+  <img src="assets/scene-3.gif" width="48%">
+  <img src="assets/scene-4.gif" width="48%">
+</p>
+
+---
+
 ## Features
 
 ### 🎲 Inline Dice Rolling

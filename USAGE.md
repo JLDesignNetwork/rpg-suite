@@ -124,7 +124,7 @@ RPG Suite now supports multiple game systems out of the box! By passing the `sys
 
 ## Custom Database & API Configuration
 
-By default, the engine uses a **Dual-Hybrid System**. It attempts to fetch stats from the massive **Open5e Public API**. If it fails, or if you request a non-D&D system (like Cyberpunk), it falls back to the local `asset/monsters.json` database.
+By default, the engine uses a **Dual-Hybrid System**. It attempts to fetch stats from the massive **Open5e Public API**. If it fails, or if you request a non-D&D system (like Cyberpunk), it falls back to the local `assets/monsters.json` database.
 
 You can completely override this behavior in **Settings > Packages > rpg-suite** under the **🌐 Data & API Routing** section:
 
