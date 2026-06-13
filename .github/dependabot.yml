@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # Dependabot will check npm dependencies
+    directory: "/" # Location of package.json
+    schedule:
+      interval: "weekly" # Check for updates once a week
+    open-pull-requests-limit: 5 # Limit the number of open PRs at a time
