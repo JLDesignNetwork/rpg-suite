@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-06-13
+### Fixed
+- **API Matching Bug**: Fixed a critical bug in the Open5e API matching logic where monsters with substring overlap (like "Angelic Enf**orc**er" for "Orc") were being pulled instead of exact matches, drastically throwing off target CR balance.
+
+## [1.0.1] - 2026-06-13
+### Fixed
+- Removed temporary stress-testing scripts that were accidentally bundled in the v1.0.0 release.
+
 ## [1.0.0] - 2026-06-13
 ### Added
 - **Mass NPC Unrolling**: The `name` argument now supports hyphen-separated arrays (`name:Jeff-Bob`), mapping explicitly provided names to generated NPCs, with robust fallbacks to default names if the array length doesn't match the NPC count.
