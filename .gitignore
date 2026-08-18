@@ -30,3 +30,4 @@ tmp/
 node_modules/
 coverage/
 .cache/
+.mcp.json
