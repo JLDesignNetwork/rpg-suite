@@ -1,119 +1,28 @@
-# Changelog
+# Changelog - JLDN RPG Suite
 
-All notable changes to this project will be documented in this file.
+All notable changes to the **RPG Suite** Pulsar package will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to the [JLDN Generational Versioning Schema (GVS)](https://github.com/JLDesignNetwork/Generational-Versioning-Schema).
 
-## [1.0.5] - 2026-06-13
+## [2606.2.0-s] - 2026-08-18
+
 ### Added
-- **Demo GIFs**: Added optimized demonstration GIFs to the `README.md` to showcase Random Encounters, Specific Monster Generation, NPC Generators, and Loot Generation.
-### Changed
-- **Asset Restructuring**: Renamed the local `asset/` directory to `assets/` to match standard conventions, and updated the engine to reference the new path.
-
-## [1.0.4] - 2026-06-13
-### Fixed
-- **API Matching Black Sun Orcs**: Completely removed the API fuzzy matching fallback. Previously, if an exact match wasn't on the first page of the API (e.g. "Orc" was on page 3), the engine grabbed the first matching word (e.g. "Black Sun Orc" CR 2). By removing the fuzzy fallback entirely, the engine correctly falls back to the exact local DB stat block (CR 0.5) preserving the Target CR budget perfectly.
-
-## [1.0.3] - 2026-06-13
-### Fixed
-- **API Matching Word Boundaries**: Upgraded the API fuzzy matching from strict exact-matching to intelligent Word Boundary Regex (`\bname\b`). This prevents substring collisions (like "Angelic Enforcer" for "Orc") while still allowing valid partial suffix matches (like "Adult Red Dragon" for "Dragon")!
-
-## [1.0.2] - 2026-06-13
-### Fixed
-- **API Matching Bug**: Fixed a critical bug in the Open5e API matching logic where monsters with substring overlap (like "Angelic Enf**orc**er" for "Orc") were being pulled instead of exact matches, drastically throwing off target CR balance.
-
-## [1.0.1] - 2026-06-13
-### Fixed
-- Removed temporary stress-testing scripts that were accidentally bundled in the v1.0.0 release.
-
-## [1.0.0] - 2026-06-13
-### Added
-- **Mass NPC Unrolling**: The `name` argument now supports hyphen-separated arrays (`name:Jeff-Bob`), mapping explicitly provided names to generated NPCs, with robust fallbacks to default names if the array length doesn't match the NPC count.
-- **Engine Bulletproofing**: Implemented mathematical boundary constraints across the suite:
-  - Hardcapped the dice engine to a maximum of 100 iterations per execution, preventing user thread lockups on extreme numbers.
-  - Hardcapped the unrolling loops to a maximum of 50 NPC generation blocks.
-
-### Fixed
-- Fixed a block-scoping `ReferenceError` involving `className` that was causing the process to hang silently when generating random classes.
-- Added comprehensive `try/catch` wrappers to the core templating injection sequence. Any critical failure will now abort the hanging process and cleanly output the exact error message into the editor.
-
-## [0.9.0] - 2026-06-13
-### Added
-- **API Encounter Generator (`gen:encounter`):** A smart, dual-hybrid engine that intelligently builds combat encounters.
-  - Queries public APIs (like Open5e) for D&D 5e monsters, with a seamless offline fallback.
-  - Automatically calculates Target CR based on party level (`party:4,level:3`).
-  - Allows requesting specific monsters (`monsters:goblin=3|orc=1`).
-  - Generates both an Initiative Tracker table and Quick Stats blocks.
-- **Offline Monster Database:** Included a core `monsters.json` database and added a new setting (`rpg-suite.customTemplates.monstersDB`) to point to custom offline databases.
-
-## [0.8.0] - 2026-06-12
-### Added
-- **Multi-System UI Menus:** Replaced the generic generator commands in the main menu with comprehensive submenus for every supported game system. You can now point-and-click to generate Sheets and NPCs for Cyberpunk, Warhammer, Rifts, and all editions of D&D without typing any hotkeys!
-
-## [0.6.0] - 2026-06-12
-### Added
-- **Multi-System Support:** The Markdown Generators now natively support generating characters for different universes using the `system` argument. Supported systems: `dnd-5e`, `dnd-4e`, `dnd-3.5`, `cyberpunk`, `w40k`, `rifts`.
-- **Dynamic Skills Engine:** Built massive built-in skill dictionaries for each system (over 200 distinct skills). When generating a sheet, it automatically maps out the full skills table with mathematical modifiers auto-calculated based on the generated stats.
-- **System-Specific Math:** Implemented custom algorithm mappings for each system's stat modifiers: base-10 stat division for D&D, percentage accumulation for Palladium/Rifts, and raw carry-over for Cyberpunk/W40k.
-- **Granular Custom Templates:** Overhauled the Settings menu to allow independent custom template paths for Sheets, NPCs, and Trackers across all systems.
+- **In-Repo Documentation Wiki (`docs/`)**: Migrated 100% of the GitHub wiki into version-controlled `docs/` (`docs/index.md`, `docs/architecture.md`, `docs/usage.md`, `docs/dice_engine.md`, `docs/systems_templates.md`, `docs/configuration.md`, `docs/keybindings.md`).
+- **Generational Development Hub (`.dev/`)**: Established root `.dev/` generational hub containing `ROADMAP.md`, `backlog.json`, `2606/backlog.json`, and `2606/ideas.json`.
+- **GitHub Governance Suite**: Scaffolded `.github/FUNDING.yml`, `.github/SECURITY.md`, `.github/CONTRIBUTING.md`, `.github/CODE_OF_CONDUCT.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `.github/copilot-instructions.md`, structured `.github/ISSUE_TEMPLATE/` forms, and automated CI workflows (`ci.yml`, `codeql.yml`).
 
 ### Changed
-- **Renamed `gen:encounter` to `gen:tracker`** to clarify its purpose as an Initiative Tracker rather than a random monster spawner.
+- **Test Alignment**: Aligned `spec/generators.test.js` to match the enhanced multi-column HTML template layouts (100% test suite passing).
+- **Package Metadata**: Standardized package naming and GVS versioning `2606.2.0-s`.
 
-## [0.5.1] - 2026-06-12
-### Fixed
-- Hotfixed a critical regex parsing bug so the parser accepts tags containing periods (like `dnd-3.5`).
+## [2606.1.5-s] - 2026-06-13
 
-## [0.5.0] - 2026-06-12
 ### Added
-- Overhauled all system default templates to professional Markdown table-based layouts. 
+- Demo GIFs and asset restructure.
+- Multi-column HTML layout blocks for NPC stat blocks and character sheets.
 
-## [0.4.0] - 2026-06-12
+## [2606.1.0-s] - 2026-06-12
+
 ### Added
-- Upgraded the generator's template strings to parse and inject structured `Background` and `History` elements out-of-the-box.
-
-## [0.3.0] - 2026-06-12
-### Added
-- Complete expansion into a Dungeon Master toolkit with Markdown generators (`gen:sheet`, `gen:npc`, `gen:encounter`).
-- Added Smart Router argument parser to intercept JSON-like parameters (e.g. `{stats:4,class:paladin,level:12,hp:58,ac:21,name:Jeff}`).
-- Implemented Intelligent Stat Distribution that mathematically sorts generated rolls and assigns them to the highest priority stats defined by standard D&D classes.
-- Added a Dynamic Argument Replacement engine enabling any arbitrary text property to be parsed and injected into `{{TAG}}` placeholders inside Markdown templates.
-
-### Changed
-- Rebranded and renamed the entire package repository from `rpg-dice` to `rpg-suite`.
-- Stripped aggressive bracket-matcher routing from the core UI binding to support seamless JSON string interpolation.
-
-## [0.2.5] - 2026-06-12
-### Fixed
-- Fixed a bug where dangling colons generated unintended ghost dice rolls by injecting custom Regular Expression word boundaries (`/[a-zA-Z0-9:\+\-]+/`) to bypass default editor punctuation breaks.
-
-### Changed
-- Synchronized `bracket-matcher` to strictly `await` asynchronous UI selections.
-
-## [0.2.4] - 2026-06-12
-### Added
-- Extracted statistical math logic and dice rolling into pure `engine.js`.
-- Introduced Jest unit testing for all mathematical algorithms.
-
-### Changed
-- Branched legacy Atom package to JLDesignNetwork.
-- Formally decoupled mathematical algorithms from editor UI bindings.
-- Upgraded package `engines` target to strictly support `pulsar` natively.
-
-## [0.2.3] - Legacy
-### Fixed
-- Corrected command name in menus and readme.
-
-## [0.2.1] - Legacy
-### Added
-- Added ability to roll Fate/Fudge-style dice using 'F' in place of sides specifier.
-
-## [0.2.0] - Legacy
-### Added
-- Merged pull request from JLDesignNetwork adding stat generation features and refining roll results output.
-- Added `verbose` setting to retain roll info appended alongside result like in 0.1 versions.
-
-## [0.1.0] - Legacy
-### Added
-- Added basic functionality for generating dice rolls using selected text for guidance and appending results to end of line.
+- Initial genesis build: System-agnostic dice math engine, stat prioritizer, and Pulsar command palette integration.

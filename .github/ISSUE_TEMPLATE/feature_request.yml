@@ -1,0 +1,23 @@
+name: "Feature / System Proposal"
+description: "Propose support for a new RPG ruleset, generator template, or dice math feature."
+title: "[PROPOSAL]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting a proposal for RPG Suite!
+  - type: textarea
+    id: problem
+    attributes:
+      label: System / Feature Concept
+      description: What system or mechanic should be supported?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Detailed Implementation Proposal
+      description: Describe the ruleset math, attributes, and desired templates.
+    validations:
+      required: true

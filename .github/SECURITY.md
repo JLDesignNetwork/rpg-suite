@@ -2,17 +2,17 @@
 
 ## Supported Versions
 
-Currently, only the latest major release of `rpg-suite` receives security updates.
+Only the active GVS Generation and latest supported Subversion receive active security patches.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| Generation / Subversion | Supported |
+| :--- | :---: |
+| `2606.2.x-s` | ✅ Active Supported |
+| `< 2606.2.0` | ❌ Deprecated |
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in this extension, please do **not** open a public issue. 
+The JLDesignNetwork team takes repository security seriously.
 
-Instead, please responsibly disclose it by using the **Private Vulnerability Reporting** feature. Go to the **Security** tab of this repository, select **Advisories**, and click **Report a vulnerability**. 
-
-We take all security reports seriously and will work with you to verify and patch the vulnerability as quickly as possible.
+1. **Private Disclosure:** Please do NOT report security vulnerabilities via public GitHub issues.
+2. **Contact:** Submit security advisories directly through GitHub's Private Vulnerability Reporting or contact the maintainer at `jldesignnetwork@icloud.com`.
+3. **Response Timeline:** You will receive an acknowledgment within 48 hours and a patch timeline within 7 days.

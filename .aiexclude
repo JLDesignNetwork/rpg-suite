@@ -1,0 +1,7 @@
+# Hard Security Boundary
+.env
+.env.*
+*.key
+*.pem
+auth.json
+database/*.sqlite*

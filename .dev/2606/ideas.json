@@ -1,0 +1,16 @@
+[
+  {
+    "id": "PROJ-IDEA-01",
+    "title": "Standalone Node CLI Runner (@jldn/rpg-cli)",
+    "status": "pending",
+    "details": "Export the game_math and generators engine as a standalone CLI tool for headless automation.",
+    "created_at": "2026-08-18T18:20:00+02:00"
+  },
+  {
+    "id": "PROJ-IDEA-02",
+    "title": "Language Server Protocol (LSP) Daemon",
+    "status": "pending",
+    "details": "Build an LSP daemon providing real-time dice evaluation hover tooltips in Markdown and YAML files.",
+    "created_at": "2026-08-18T18:20:00+02:00"
+  }
+]

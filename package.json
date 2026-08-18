@@ -1,19 +1,20 @@
 {
   "name": "rpg-suite",
-  "version": "1.0.5",
+  "version": "2606.2.0-s",
   "description": "A full-scale Dungeon Master toolkit and Dice Rolling engine for the Pulsar text editor",
   "main": "./lib/rpg-suite",
   "engines": {
     "pulsar": "^1.0.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "preinstall": "pnpm dlx only-allow pnpm"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/JLDesignNetwork/rpg-suite.git"
   },
-  "author": "JLDesignNetwork",
+  "author": "Jeff Langdon (JL Design Network) <jldesignnetwork@icloud.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JLDesignNetwork/rpg-suite/issues"
@@ -29,7 +30,9 @@
     "dm",
     "toolkit",
     "pulsar",
-    "editor-plugin"
+    "editor-plugin",
+    "gvs",
+    "jldn"
   ],
   "activationCommands": {
     "atom-workspace": [
@@ -54,5 +57,6 @@
   "dependencies": {},
   "devDependencies": {
     "jest": "^30.4.2"
-  }
+  },
+  "packageManager": "pnpm@11.8.0"
 }

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "PROJ-TODO-01",
+    "title": "Execute Orange Team Legacy Modernization & Baseline Alignment",
+    "status": "completed",
+    "priority": "critical-1",
+    "protection": "protected",
+    "existed_since": "2606.2.0-s",
+    "created_at": "2026-08-18T18:20:00+02:00",
+    "details": "Scaffolded .dev/ hub, migrated GitHub wiki into version-controlled docs/ wiki, corrected local agent rules, completed .github/ governance suite, and aligned test suite."
+  }
+]

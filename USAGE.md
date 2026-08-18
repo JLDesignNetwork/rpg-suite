@@ -45,7 +45,7 @@ You can pass arguments to these generators by appending them in curly braces `{}
   *(Generates a blank generic character sheet)*
 - **Medium:** `gen:sheet{"system":"cyberpunk","class":"solo"}`
   *(Generates a Cyberpunk RED sheet, rolls stats optimized for a Solo, and builds a 40+ skill table with auto-calculated attribute modifiers!)*
-- **Complex:** `gen:sheet{"system":"dnd-5e","class":"wizard","name":"Gandalf","stats":4,"background":"sage","alignment":"neutral-good"}`
+- **Complex:** `gen:sheet{"system":"dnd5","class":"wizard","name":"Gandalf","stats":4,"background":"sage","alignment":"neutral-good"}`
   *(Generates a D&D 5e sheet for Gandalf, rolls 4d6-drop-lowest for stats, prioritizes INT and CON for the Wizard class, and pre-fills all biography fields!)*
 
 #### `gen:npc` (Monsters & NPCs)
@@ -59,21 +59,21 @@ You can pass arguments to these generators by appending them in curly braces `{}
 #### `gen:tracker` (Initiative Trackers)
 - **Easy:** `gen:tracker`
   *(Generates a blank 5-slot initiative tracker)*
-- **Complex:** `gen:tracker{"system":"dnd-5e","env":"dungeon","adv":"players"}`
+- **Complex:** `gen:tracker{"system":"dnd5","env":"dungeon","adv":"players"}`
   *(Generates a tracker and automatically prints the tactical environment and advantage conditions at the top)*
 
 #### `gen:encounter` (Combat Encounters)
-The `gen:encounter` command uses a dual-hybrid database. If your system is `dnd-5e`, it automatically fetches monster stats from the massive **Open5e Public API**. If you're offline or using a different system, it seamlessly falls back to the bundled offline database (or your own custom database).
+The `gen:encounter` command uses a dual-hybrid database. If your system is `dnd5`, it automatically fetches monster stats from the massive **Open5e Public API**. If you're offline or using a different system, it seamlessly falls back to the bundled offline database (or your own custom database).
 
-- **Easy (Implicit Default):** `gen:encounter{"system":"dnd-5e","monsters":"bandit"}`
+- **Easy (Implicit Default):** `gen:encounter{"system":"dnd5","monsters":"bandit"}`
   *(Generates an encounter with exactly 1 Bandit, fetching its full stat block from the Open5e API)*
-- **Medium (The Explicit Roster):** `gen:encounter{"system":"dnd-5e","monsters":"dragon wyrmling (red)=1|ogre=2|goblin=5","loot":"true-2.5"}`
+- **Medium (The Explicit Roster):** `gen:encounter{"system":"dnd5","monsters":"dragon wyrmling (red)=1|ogre=2|goblin=5","loot":"true-2.5"}`
   *(Bypasses the random algorithm completely. Fetches the exact roster of 8 monsters and calculates total encounter loot, multiplied by 2.5x!)*
-- **Medium (Alternative Systems):** `gen:encounter{"system":"cyberpunk","party":3,"level":2,"env":"urban","loot":true}`
+- **Medium (Alternative Systems):** `gen:encounter{"system":"cpred","party":3,"level":2,"env":"urban","loot":true}`
   *(Because Cyberpunk doesn't use the Open5e API, this safely falls back to the local offline database to randomly generate an urban street gang)*
-- **Complex (High-CR Override):** `gen:encounter{"system":"dnd-5e","cr":8,"env":"mountains","loot":false}`
+- **Complex (High-CR Override):** `gen:encounter{"system":"dnd5","cr":8,"env":"mountains","loot":false}`
   *(Forces the random engine to ignore party/level math and directly target a massive CR 8 encounter in the mountains. Disables auto-loot generation.)*
-- **Extreme (Swarm Math):** `gen:encounter{"system":"dnd-5e","party":8,"level":1,"env":"underdark","adv":"monsters","loot":"true-5"}`
+- **Extreme (Swarm Math):** `gen:encounter{"system":"dnd5","party":8,"level":1,"env":"underdark","adv":"monsters","loot":"true-5"}`
   *(Calculates the budget for a massive low-level party and cross-references it with the Underdark biome to build a balanced swarm. Monsters get tactical advantage, and loot is boosted by a massive 5x modifier!)*
 
 ---
@@ -84,20 +84,53 @@ You can heavily customize the generated templates by passing arguments inside cu
 
 **Syntax:** `gen:sheet{"key":"value","key2":"value"}`
 
-#### Built-in Placeholders
-The default `gen:sheet` and `gen:npc` templates come with several built-in tags that you can populate using arguments:
+#### Comprehensive Parameter Reference
 
-| Argument Key | Template Tag | Default Fallback |
-| :--- | :--- | :--- |
-| `name` | `{{NAME}}` | Character Name / NPC Name |
-| `class` | `{{CLASS}}` | *(Empty)* |
-| `level` | `{{LEVEL}}` | *(Empty)* |
-| `background`| `{{BACKGROUND}}`| *(Empty)* |
-| `alignment` | `{{ALIGNMENT}}`| unaligned |
-| `ac` | `{{AC}}` | 10 |
-| `hp` | `{{HP}}` | 4 (1d8) |
-| `speed` | `{{SPEED}}` | 30 ft. |
-| `init` | `{{INIT}}` | +0 |
+Below is an exhaustive list of every key, alias, and possible value you can pass to the generators. If a key has multiple aliases (e.g. `class` and `role`), they do the exact same thing—they just let you use the terminology that matches your game system.
+
+**System Selection**
+| Key / Aliases | Possible Values | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `system`, `game` | `dnd5`, `dnd2024`, `dnd4`, `dnd3.5`, `cpred`, `cp2020`, `pf2`, `sf`, `rifts`, `w40k`, `coc7`, `vtm` | `dnd5` | Defines the math engine, stat array, and specific vocabulary used for the sheet. |
+
+**Identity & Biography**
+| Key / Aliases | Possible Values | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `name`, `handle` | Any String | `Character Name` | The character or NPC's name. |
+| `class`, `role`, `archetype`, `occ` | Any String, or `random` | `Fighter` | The class or role. Determines stat prioritization if stats are rolled. |
+| `level`, `tier`, `generation` | Any Number / String | `1` | Character level, rank, or generation (VTM). |
+| `background`, `lifepath` | Any String | `Unknown Background`| Character background or lifepath history. |
+| `alignment` | Any String | `unaligned` | The character's moral alignment. |
+
+**Combat & Health**
+| Key / Aliases | Possible Values | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `hp`, `current_hp` | Any Number | `10` | Current Hit Points / Wounds / Stamina. |
+| `max_hp` | Any Number | `10` | Maximum Hit Points. |
+| `ac`, `armor`, `resilience` | Any Number | `10` | Armor Class, SP, or Defense. |
+| `speed`, `movement`, `spd` | Any Number / String | `30 ft.` | Movement speed rating. |
+| `init` | Any Number / String | `+0` | Initiative modifier. |
+| `exp`, `current_exp` | Any Number | `0` | Current Experience points. |
+| `max_exp` | Any Number | `1000` | Target Experience to next level. |
+| `hunger` | Any Number | `1` | VTM specific: Hunger level. |
+| `humanity` | Any Number | `50` | VTM/CoC specific: Humanity / Sanity rating. |
+
+**Stats & Attributes**
+| Key / Aliases | Possible Values | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `stats` | `1`, `2`, `3`, `4`, `5` or a JSON object | *(Empty)* | If a number, rolls dice using that method (e.g. `3` = 3d6, `4` = 4d6 drop lowest). Assigns rolled stats based on class priority. |
+| `str`, `dex`, `con`, `int`, `wis`, `cha`, etc. | Any Number | *(Calculated)* | Direct overrides for specific stats. Matches the attribute names for the chosen system (e.g., `ref`, `body` for Cyberpunk). |
+
+**Encounter Generation (`gen:encounter`)**
+| Key / Aliases | Possible Values | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `party` | Any Number | `4` | Number of players in the party to balance against. |
+| `level` | Any Number | `1` | Average level of the party to balance against. |
+| `env` | `dungeon`, `urban`, `forest`, `mountains`, `underdark`, etc. | *(Random)* | The biome/environment of the encounter. |
+| `adv` | `players`, `monsters`, `none` | `none` | Who has tactical advantage at the start. |
+| `loot` | `true`, `false`, or a multiplier e.g., `"true-2.5"` | `true` | Whether to generate a loot table and what multiplier to apply. |
+| `cr` | Any Number | *(Calculated)* | Forces the generator to build an encounter of exactly this Challenge Rating. |
+| `monsters` | String mapping e.g., `"bandit=2\|goblin=5"` | *(Random)* | Bypasses random generation and fetches exactly these monsters. |
 
 #### Intelligent Stat Prioritization
 If you want the engine to automatically roll and assign stats for a specific class, pass the `stats` and `class` arguments:
@@ -113,13 +146,13 @@ If you are copying an existing monster and already know their stats, you can exp
 RPG Suite now supports multiple game systems out of the box! By passing the `system` (or `game`) argument, the engine will automatically generate the correct character sheet structure, inject a comprehensive, system-specific skill list, and auto-calculate mathematical modifiers specific to the universe.
 
 **Supported Systems:**
-- `dnd-5e`, `dnd-4e`, `dnd-3.5` (D&D variants)
-- `cyberpunk` or `cp` (Cyberpunk RED)
+- `dnd5`, `dnd4`, `dnd3.5` (D&D variants)
+- `cpred` (Cyberpunk RED)
 - `w40k` (Warhammer 40k: Wrath & Glory)
 - `rifts` (Palladium / Rifts)
 
 **Example:**
-`gen:sheet{"system":"cp","class":"solo"}`
+`gen:sheet{"system":"cpred","class":"solo"}`
 *Action:* Generates a Cyberpunk character sheet, rolls stats optimized for a Solo, and dynamically builds a massive 40+ skill table with auto-calculated attribute modifiers based on the raw stat generation!
 
 ## Custom Database & API Configuration

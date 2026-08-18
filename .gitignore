@@ -1,2 +1,32 @@
-TODO.md
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor Workspaces
+.cursor/
+.vscode/
+.idea/
+.junie/
+.nova/
+.zed/
+.ai/
+.antigravitycli/
+_[*]/
+
+# Ephemeral Scratch & Temporary Files
+.agents/scratch/*
+!.agents/scratch/.gitkeep
+scratch/
+tmp/
+*.tmp
+*.log*
+
+# Node & Test Coverage
 node_modules/
+coverage/
+.cache/

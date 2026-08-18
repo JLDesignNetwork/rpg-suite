@@ -1,0 +1,1308 @@
+{
+  "dnd-5e": {
+    "alias": "dnd5"
+  },
+  "dnd5": {
+    "engine": "d20",
+    "system_meta": {
+      "name": "D&D 5e",
+      "health_metric_label": "Hit Points",
+      "class_label": "Class",
+      "level_label": "Level",
+      "ac_label": "Armor Class",
+      "speed_label": "Speed"
+    },
+    "attributes": [
+      {
+        "name": "STR"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "CON"
+      },
+      {
+        "name": "INT"
+      },
+      {
+        "name": "WIS"
+      },
+      {
+        "name": "CHA"
+      }
+    ],
+    "diceCount": 6,
+    "priorities": {
+      "fighter": [
+        "STR",
+        "CON",
+        "DEX",
+        "WIS",
+        "CHA",
+        "INT"
+      ],
+      "wizard": [
+        "INT",
+        "CON",
+        "DEX",
+        "WIS",
+        "CHA",
+        "STR"
+      ]
+    },
+    "skills_layout": "list",
+    "skills_payload": [
+      {
+        "name": "Acrobatics",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Animal Handling",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Arcana",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Athletics",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Deception",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "History",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Insight",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Intimidation",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Investigation",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Medicine",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Nature",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Perception",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Performance",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Persuasion",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Religion",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Sleight of Hand",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Stealth",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Survival",
+        "governing_stat": "WIS"
+      }
+    ],
+    "unique_blocks": [
+      "spellcasting",
+      "saving_throws"
+    ],
+    "point_buy": {
+      "default_pool": 27,
+      "cost_table": {
+        "8": 0,
+        "9": 1,
+        "10": 2,
+        "11": 3,
+        "12": 4,
+        "13": 5,
+        "14": 7,
+        "15": 9
+      }
+    },
+    "point_pool": {
+      "pool": 72,
+      "base": 0,
+      "min": 3,
+      "max": 18
+    }
+  },
+  "dnd-2024": {
+    "alias": "dnd2024"
+  },
+  "dnd2024": {
+    "engine": "d20",
+    "system_meta": {
+      "name": "D&D 2024 (5.5e)",
+      "health_metric_label": "Hit Points",
+      "class_label": "Class",
+      "level_label": "Level",
+      "ac_label": "Armor Class",
+      "speed_label": "Speed"
+    },
+    "attributes": [
+      {
+        "name": "STR"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "CON"
+      },
+      {
+        "name": "INT"
+      },
+      {
+        "name": "WIS"
+      },
+      {
+        "name": "CHA"
+      }
+    ],
+    "diceCount": 6,
+    "priorities": {
+      "fighter": [
+        "STR",
+        "CON",
+        "DEX",
+        "WIS",
+        "CHA",
+        "INT"
+      ],
+      "wizard": [
+        "INT",
+        "CON",
+        "DEX",
+        "WIS",
+        "CHA",
+        "STR"
+      ]
+    },
+    "skills_layout": "list",
+    "skills_payload": [
+      {
+        "name": "Acrobatics",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Animal Handling",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Arcana",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Athletics",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Deception",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "History",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Insight",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Intimidation",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Investigation",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Medicine",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Nature",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Perception",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Performance",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Persuasion",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Religion",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Sleight of Hand",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Stealth",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Survival",
+        "governing_stat": "WIS"
+      }
+    ],
+    "unique_blocks": [
+      "spellcasting",
+      "saving_throws",
+      "weapon_masteries"
+    ],
+    "point_buy": {
+      "default_pool": 27,
+      "cost_table": {
+        "8": 0,
+        "9": 1,
+        "10": 2,
+        "11": 3,
+        "12": 4,
+        "13": 5,
+        "14": 7,
+        "15": 9
+      }
+    },
+    "point_pool": {
+      "pool": 72,
+      "base": 0,
+      "min": 3,
+      "max": 18
+    }
+  },
+  "dnd-4e": {
+    "alias": "dnd4"
+  },
+  "dnd4": {
+    "engine": "d20",
+    "system_meta": {
+      "name": "D&D 4e",
+      "health_metric_label": "Hit Points",
+      "class_label": "Class",
+      "level_label": "Level",
+      "ac_label": "Armor Class",
+      "speed_label": "Speed"
+    },
+    "attributes": [
+      {
+        "name": "STR"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "CON"
+      },
+      {
+        "name": "INT"
+      },
+      {
+        "name": "WIS"
+      },
+      {
+        "name": "CHA"
+      }
+    ],
+    "diceCount": 6,
+    "skills_layout": "list",
+    "skills_payload": [
+      {
+        "name": "Acrobatics",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Arcana",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Athletics",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Bluff",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Diplomacy",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Dungeoneering",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Endurance",
+        "governing_stat": "CON"
+      },
+      {
+        "name": "Heal",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "History",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Insight",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Intimidate",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Nature",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Perception",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Religion",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Stealth",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Streetwise",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Thievery",
+        "governing_stat": "DEX"
+      }
+    ],
+    "unique_blocks": [
+      "defenses",
+      "healing_surges",
+      "powers"
+    ],
+    "point_buy": {
+      "default_pool": 27,
+      "cost_table": {
+        "8": 0,
+        "9": 1,
+        "10": 2,
+        "11": 3,
+        "12": 4,
+        "13": 5,
+        "14": 7,
+        "15": 9
+      }
+    },
+    "point_pool": {
+      "pool": 72,
+      "base": 0,
+      "min": 3,
+      "max": 18
+    }
+  },
+  "dnd-3.5": {
+    "alias": "dnd3.5"
+  },
+  "dnd3.5": {
+    "engine": "d20",
+    "system_meta": {
+      "name": "D&D 3.5e",
+      "health_metric_label": "Hit Points",
+      "class_label": "Class",
+      "level_label": "Level",
+      "ac_label": "Armor Class",
+      "speed_label": "Speed"
+    },
+    "attributes": [
+      {
+        "name": "STR"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "CON"
+      },
+      {
+        "name": "INT"
+      },
+      {
+        "name": "WIS"
+      },
+      {
+        "name": "CHA"
+      }
+    ],
+    "diceCount": 6,
+    "skills_layout": "ranks",
+    "skills_payload": [
+      {
+        "name": "Appraise",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Balance",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Bluff",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Climb",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Concentration",
+        "governing_stat": "CON"
+      },
+      {
+        "name": "Hide",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Listen",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Move Silently",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Spot",
+        "governing_stat": "WIS"
+      }
+    ],
+    "unique_blocks": [
+      "saving_throws",
+      "spellcasting",
+      "ac_breakdown"
+    ],
+    "point_buy": {
+      "default_pool": 27,
+      "cost_table": {
+        "8": 0,
+        "9": 1,
+        "10": 2,
+        "11": 3,
+        "12": 4,
+        "13": 5,
+        "14": 7,
+        "15": 9
+      }
+    },
+    "point_pool": {
+      "pool": 72,
+      "base": 0,
+      "min": 3,
+      "max": 18
+    }
+  },
+  "cyberpunk": {
+    "alias": "cpred"
+  },
+  "cp": {
+    "alias": "cpred"
+  },
+  "cpred": {
+    "engine": "cyberpunk",
+    "system_meta": {
+      "name": "Cyberpunk Red",
+      "health_metric_label": "Hit Points",
+      "class_label": "Role",
+      "level_label": "Rank",
+      "ac_label": "Armor",
+      "speed_label": "MOVE"
+    },
+    "attributes": [
+      {
+        "name": "INT"
+      },
+      {
+        "name": "REF"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "TECH"
+      },
+      {
+        "name": "COOL"
+      },
+      {
+        "name": "WILL"
+      },
+      {
+        "name": "LUCK"
+      },
+      {
+        "name": "MOVE"
+      },
+      {
+        "name": "BODY"
+      },
+      {
+        "name": "EMP"
+      }
+    ],
+    "diceCount": 10,
+    "priorities": {
+      "solo": [
+        "REF",
+        "DEX",
+        "BODY",
+        "WILL",
+        "MOVE",
+        "COOL",
+        "EMP",
+        "TECH",
+        "INT",
+        "LUCK"
+      ]
+    },
+    "skills_layout": "list",
+    "skills_payload": [
+      {
+        "name": "Athletics",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Brawling",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Evasion",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Handgun",
+        "governing_stat": "REF"
+      },
+      {
+        "name": "Perception",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Stealth",
+        "governing_stat": "DEX"
+      }
+    ],
+    "unique_blocks": [
+      "cyberware_tracker",
+      "role_ability"
+    ],
+    "point_pool": {
+      "pool": 60,
+      "base": 2,
+      "min": 2,
+      "max": 8
+    }
+  },
+  "cyberpunk-2020": {
+    "alias": "cp2020"
+  },
+  "cp2020": {
+    "engine": "cyberpunk",
+    "system_meta": {
+      "name": "Cyberpunk 2020",
+      "health_metric_label": "Hit Points",
+      "class_label": "Role",
+      "level_label": "Rank",
+      "ac_label": "Armor",
+      "speed_label": "MOVE"
+    },
+    "attributes": [
+      {
+        "name": "INT"
+      },
+      {
+        "name": "REF"
+      },
+      {
+        "name": "TECH"
+      },
+      {
+        "name": "COOL"
+      },
+      {
+        "name": "ATTR"
+      },
+      {
+        "name": "LUCK"
+      },
+      {
+        "name": "MA"
+      },
+      {
+        "name": "BODY"
+      },
+      {
+        "name": "EMP"
+      }
+    ],
+    "diceCount": 9,
+    "priorities": {
+      "solo": [
+        "REF",
+        "BODY",
+        "COOL",
+        "INT",
+        "EMP",
+        "TECH",
+        "LUCK",
+        "ATTR",
+        "MA"
+      ]
+    },
+    "skills_layout": "grouped_by_attribute",
+    "skills_payload": [
+      {
+        "name": "Awareness/Notice",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Handgun",
+        "governing_stat": "REF"
+      },
+      {
+        "name": "Brawling",
+        "governing_stat": "REF"
+      },
+      {
+        "name": "Melee",
+        "governing_stat": "REF"
+      },
+      {
+        "name": "CyberTech",
+        "governing_stat": "TECH"
+      }
+    ],
+    "unique_blocks": [
+      "cyberware_tracker",
+      "lifepath_history",
+      "wound_track",
+      "special_ability"
+    ],
+    "point_pool": {
+      "pool": 60,
+      "base": 2,
+      "min": 2,
+      "max": 8
+    }
+  },
+  "pathfinder": {
+    "alias": "pf2"
+  },
+  "pf2": {
+    "engine": "d20",
+    "system_meta": {
+      "name": "Pathfinder 2e",
+      "health_metric_label": "Hit Points",
+      "class_label": "Class",
+      "level_label": "Level",
+      "ac_label": "Armor Class",
+      "speed_label": "Speed"
+    },
+    "attributes": [
+      {
+        "name": "STR"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "CON"
+      },
+      {
+        "name": "INT"
+      },
+      {
+        "name": "WIS"
+      },
+      {
+        "name": "CHA"
+      }
+    ],
+    "diceCount": 6,
+    "skills_layout": "proficiency",
+    "skills_payload": [
+      {
+        "name": "Acrobatics",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Arcana",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Athletics",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Crafting",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Deception",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Diplomacy",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Intimidation",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Medicine",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Nature",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Occultism",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Performance",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Religion",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Society",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Stealth",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Survival",
+        "governing_stat": "WIS"
+      },
+      {
+        "name": "Thievery",
+        "governing_stat": "DEX"
+      }
+    ],
+    "unique_blocks": [
+      "feats",
+      "actions",
+      "saving_throws"
+    ],
+    "point_buy": {
+      "default_pool": 27,
+      "cost_table": {
+        "8": 0,
+        "9": 1,
+        "10": 2,
+        "11": 3,
+        "12": 4,
+        "13": 5,
+        "14": 7,
+        "15": 9
+      }
+    },
+    "point_pool": {
+      "pool": 72,
+      "base": 0,
+      "min": 3,
+      "max": 18
+    }
+  },
+  "starfinder": {
+    "alias": "sf"
+  },
+  "sf": {
+    "engine": "d20",
+    "system_meta": {
+      "name": "Starfinder",
+      "health_metric_label": "Stamina",
+      "class_label": "Class",
+      "level_label": "Level",
+      "ac_label": "Armor Class",
+      "speed_label": "Speed"
+    },
+    "attributes": [
+      {
+        "name": "STR"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "CON"
+      },
+      {
+        "name": "INT"
+      },
+      {
+        "name": "WIS"
+      },
+      {
+        "name": "CHA"
+      }
+    ],
+    "diceCount": 6,
+    "skills_layout": "ranks",
+    "skills_payload": [
+      {
+        "name": "Acrobatics",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Athletics",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Computers",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Engineering",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Piloting",
+        "governing_stat": "DEX"
+      }
+    ],
+    "unique_blocks": [
+      "resolve_points",
+      "saving_throws"
+    ],
+    "point_buy": {
+      "default_pool": 27,
+      "cost_table": {
+        "8": 0,
+        "9": 1,
+        "10": 2,
+        "11": 3,
+        "12": 4,
+        "13": 5,
+        "14": 7,
+        "15": 9
+      }
+    },
+    "point_pool": {
+      "pool": 72,
+      "base": 0,
+      "min": 3,
+      "max": 18
+    }
+  },
+  "rifts": {
+    "engine": "rifts",
+    "system_meta": {
+      "name": "Rifts / Palladium",
+      "health_metric_label": "Hit Points",
+      "class_label": "O.C.C.",
+      "level_label": "Level",
+      "ac_label": "Armor",
+      "speed_label": "Speed"
+    },
+    "attributes": [
+      {
+        "name": "IQ"
+      },
+      {
+        "name": "ME"
+      },
+      {
+        "name": "MA"
+      },
+      {
+        "name": "PS"
+      },
+      {
+        "name": "PP"
+      },
+      {
+        "name": "PE"
+      },
+      {
+        "name": "PB"
+      },
+      {
+        "name": "Spd"
+      }
+    ],
+    "diceCount": 8,
+    "skills_layout": "percentage",
+    "skills_payload": [
+      {
+        "name": "Computer Operation",
+        "governing_stat": "IQ"
+      },
+      {
+        "name": "Climbing",
+        "governing_stat": "PP"
+      },
+      {
+        "name": "Prowl",
+        "governing_stat": "PP"
+      }
+    ],
+    "unique_blocks": [
+      "occ_features",
+      "psionics_magic"
+    ],
+    "point_pool": {
+      "pool": 84,
+      "base": 0,
+      "min": 3,
+      "max": 24
+    }
+  },
+  "w40k": {
+    "engine": "w40k",
+    "system_meta": {
+      "name": "Warhammer 40k",
+      "health_metric_label": "Wounds",
+      "class_label": "Archetype",
+      "level_label": "Rank",
+      "ac_label": "Armor",
+      "speed_label": "Movement"
+    },
+    "attributes": [
+      {
+        "name": "WS"
+      },
+      {
+        "name": "BS"
+      },
+      {
+        "name": "S"
+      },
+      {
+        "name": "T"
+      },
+      {
+        "name": "Ag"
+      },
+      {
+        "name": "Int"
+      },
+      {
+        "name": "Per"
+      },
+      {
+        "name": "WP"
+      },
+      {
+        "name": "Fel"
+      }
+    ],
+    "diceCount": 9,
+    "skills_layout": "binary_trained",
+    "skills_payload": [
+      {
+        "name": "Athletics",
+        "governing_stat": "S"
+      },
+      {
+        "name": "Awareness",
+        "governing_stat": "Per"
+      },
+      {
+        "name": "Dodge",
+        "governing_stat": "Ag"
+      },
+      {
+        "name": "Medicae",
+        "governing_stat": "Int"
+      },
+      {
+        "name": "Stealth",
+        "governing_stat": "Ag"
+      }
+    ],
+    "unique_blocks": [
+      "wargear",
+      "mutations",
+      "fate_points"
+    ],
+    "point_pool": {
+      "pool": 100,
+      "base": 20,
+      "min": 20,
+      "max": 40
+    }
+  },
+  "coc": {
+    "alias": "coc7"
+  },
+  "coc7": {
+    "engine": "d100",
+    "system_meta": {
+      "name": "Call of Cthulhu 7e",
+      "health_metric_label": "Hit Points",
+      "class_label": "Occupation",
+      "level_label": "Age",
+      "ac_label": "Armor",
+      "speed_label": "Move"
+    },
+    "attributes": [
+      {
+        "name": "STR"
+      },
+      {
+        "name": "CON"
+      },
+      {
+        "name": "SIZ"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "APP"
+      },
+      {
+        "name": "INT"
+      },
+      {
+        "name": "POW"
+      },
+      {
+        "name": "EDU"
+      }
+    ],
+    "diceCount": 8,
+    "skills_layout": "percentage",
+    "skills_payload": [
+      {
+        "name": "Cthulhu Mythos",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Dodge",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Library Use",
+        "governing_stat": "EDU"
+      },
+      {
+        "name": "Spot Hidden",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Stealth",
+        "governing_stat": "DEX"
+      }
+    ],
+    "unique_blocks": [
+      "sanity",
+      "luck"
+    ],
+    "point_pool": {
+      "pool": 400,
+      "base": 0,
+      "min": 15,
+      "max": 90
+    }
+  },
+  "vtm": {
+    "engine": "vtm",
+    "system_meta": {
+      "name": "Vampire: The Masquerade V5",
+      "health_metric_label": "Health",
+      "class_label": "Clan",
+      "level_label": "Generation",
+      "ac_label": "Armor",
+      "speed_label": "Movement"
+    },
+    "attributes": [
+      {
+        "name": "STR"
+      },
+      {
+        "name": "DEX"
+      },
+      {
+        "name": "STA"
+      },
+      {
+        "name": "CHA"
+      },
+      {
+        "name": "MAN"
+      },
+      {
+        "name": "COM"
+      },
+      {
+        "name": "INT"
+      },
+      {
+        "name": "WIT"
+      },
+      {
+        "name": "RES"
+      }
+    ],
+    "diceCount": 9,
+    "skills_layout": "dots",
+    "skills_payload": [
+      {
+        "name": "Athletics",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Brawl",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Crafts",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Drive",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Firearms",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Melee",
+        "governing_stat": "STR"
+      },
+      {
+        "name": "Larceny",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Stealth",
+        "governing_stat": "DEX"
+      },
+      {
+        "name": "Survival",
+        "governing_stat": "RES"
+      },
+      {
+        "name": "Animal Ken",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Etiquette",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Insight",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Intimidation",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Leadership",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Performance",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Persuasion",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Streetwise",
+        "governing_stat": "CHA"
+      },
+      {
+        "name": "Subterfuge",
+        "governing_stat": "MAN"
+      },
+      {
+        "name": "Academics",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Awareness",
+        "governing_stat": "WIT"
+      },
+      {
+        "name": "Finance",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Investigation",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Medicine",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Occult",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Politics",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Science",
+        "governing_stat": "INT"
+      },
+      {
+        "name": "Technology",
+        "governing_stat": "INT"
+      }
+    ],
+    "unique_blocks": [
+      "hunger",
+      "humanity",
+      "disciplines"
+    ],
+    "point_pool": {
+      "pool": 22,
+      "base": 1,
+      "min": 1,
+      "max": 5
+    }
+  }
+}

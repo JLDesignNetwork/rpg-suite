@@ -1,25 +1,29 @@
 /**
  * @since 0.3.0
- * @version 0.3.0
+ * @version 2606.2.0-s
  */
 
 const { generateSheet, generateNPC, generateTracker } = require('../lib/generators');
+const { GameMath } = require('../lib/game_math');
 
 describe('RPG Suite Generators', () => {
   it('generates a default character sheet', () => {
     const sheet = generateSheet('');
-    expect(sheet).toContain('# Character Sheet');
-    expect(sheet).toContain('| Character Name |');
+    expect(sheet).toContain('Character Name');
+    expect(sheet).toContain('<b>Hit Points:</b>');
+    expect(sheet).toContain('<b>Armor Class:</b>');
   });
 
   it('generates a default encounter table', () => {
     const table = generateTracker('');
-    expect(table).toContain('| Initiative | Name | HP | Max HP | Conditions / Notes |');
+    expect(table).toContain('# Initiative Tracker');
+    expect(table).toContain('<b>[Init] Name:</b>');
+    expect(table).toContain('<b>HP:</b>');
   });
 
   it('generates an NPC stat block with pre-rolled stats', () => {
     const npc = generateNPC('');
-    expect(npc).toContain('# Character Name');
+    expect(npc).toContain('Character Name');
     
     // Ensure the placeholders are gone
     expect(npc).not.toContain('{{STR}}');
@@ -40,25 +44,26 @@ describe('RPG Suite Generators', () => {
   });
 
   it('sorts rolled stats by class priority', () => {
-    const engine = require('../lib/engine');
-    const originalStats = engine.stats;
+    const originalGenerateStats = GameMath.prototype.generateStats;
     
     // Mock the stats roll to a predictable sequence
-    engine.stats = jest.fn(() => [15, 14, 13, 12, 10, 8]);
+    GameMath.prototype.generateStats = jest.fn(() => [15, 14, 13, 12, 10, 8]);
 
     const args = {
-      class: 'fighter',
-      priorities: {
-        fighter: ['STR', 'CON', 'DEX', 'WIS', 'CHA', 'INT']
-      }
+      class: 'fighter'
     };
     
     const npc = generateNPC('', args);
     
-    // Check table order: STR | DEX | CON | INT | WIS | CHA
-    // Mapped: 15 (STR), 14 (CON), 13 (DEX), 12 (WIS), 10 (CHA), 8 (INT)
-    expect(npc).toContain('| 15 (+2) | 13 (+1) | 14 (+2) | 8 (-1) | 12 (+1) | 10 (+0) |');
+    // Mapped priorities for D&D 5e fighter (STR, CON, DEX, WIS, CHA, INT):
+    // 15 (STR), 14 (CON), 13 (DEX), 12 (WIS), 10 (CHA), 8 (INT)
+    expect(npc).toContain('<b>STR:</b> 15 (+2)');
+    expect(npc).toContain('<b>DEX:</b> 13 (+1)');
+    expect(npc).toContain('<b>CON:</b> 14 (+2)');
+    expect(npc).toContain('<b>INT:</b> 8 (-1)');
+    expect(npc).toContain('<b>WIS:</b> 12 (+1)');
+    expect(npc).toContain('<b>CHA:</b> 10 (+0)');
     
-    engine.stats = originalStats; // Restore
+    GameMath.prototype.generateStats = originalGenerateStats; // Restore
   });
 });

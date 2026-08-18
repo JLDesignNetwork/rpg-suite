@@ -1,40 +1,65 @@
-name: CI
+name: "CI Quality Gate"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
 
-# This workflow will run anytime a Pull Request is opened, or code is pushed to the main branch
-on:
-  push:
-    branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
-
 jobs:
-  test:
+  validate:
+    name: Test Suite & JSON Validation
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x] # Tests your code on both Node 18 and Node 20
+    timeout-minutes: 10
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Install pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        version: 9
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
+      - name: Validate JSON Schemas
+        run: |
+          python3 -c "
+          import json, glob, sys
+          has_error = False
+          for f in glob.glob('**/*.json', recursive=True):
+              if 'node_modules' in f or '.cache' in f:
+                  continue
+              try:
+                  with open(f, 'r', encoding='utf-8') as fh:
+                      json.load(fh)
+                  print(f'✅ Valid JSON: {f}')
+              except Exception as e:
+                  print(f'❌ Invalid JSON: {f} -> {e}', file=sys.stderr)
+                  has_error = True
+          if has_error:
+              sys.exit(1)
+          "
 
-    - name: Install Dependencies
-      run: pnpm install --frozen-lockfile
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.8.0
 
-    - name: Run Jest Tests
-      run: pnpm test
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Execute Jest Test Suite
+        run: pnpm test

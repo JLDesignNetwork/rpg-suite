@@ -1,1 +1,5 @@
-custom: https://buymeacoffee.com/jldesignnetwork
+# GitHub Funding Configuration
+custom:
+  - "https://buymeacoffee.com/jldesignnetwork"
+github:
+  - JLDesignNetwork
