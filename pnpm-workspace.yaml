@@ -1,3 +1,6 @@
+allowBuilds:
+  unrs-resolver: true
+
 overrides:
   brace-expansion: '>=2.1.4'
   js-yaml: '>=3.15.1'
