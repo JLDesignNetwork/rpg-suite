@@ -8,5 +8,13 @@
     "existed_since": "2606.2.0-s",
     "created_at": "2026-08-18T18:20:00+02:00",
     "details": "Scaffolded .dev/ hub, migrated GitHub wiki into version-controlled docs/ wiki, corrected local agent rules, completed .github/ governance suite, and aligned test suite."
+  },
+  {
+    "id": "PROJ-TODO-02",
+    "title": "Update JLDN Frontmatter",
+    "status": "pending",
+    "details": "Update the README.md frontmatter to include the new `type` and `platform` classification keys per the updated AGENTS.md schema.",
+    "created_at": "2026-08-19T20:36:19+02:00",
+    "existed_since": "2608.1.0-a"
   }
 ]
